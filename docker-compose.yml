@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  surrealdb:
+    image: surrealdb/surrealdb:latest
+    container_name: surrealdb
+    restart: "no"
+    command: start --user ${SURREALDB_USERNAME:-root} --pass ${SURREALDB_PASSWORD:-root} file:/data/database.db
+    ports:
+      - ${SURREALDB_PORT:-8000}:8000
+    volumes:
+      - ./surrealdb_data:/data
