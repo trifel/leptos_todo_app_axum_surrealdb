@@ -4,11 +4,10 @@ This example creates a basic todo app with an Axum backend that uses Leptos' ser
 
 ## Getting started with SurrealDB
 
-SurrealDB can be installed directly onto your system, or alternatively, you can use the SurealDB Docker image. However, in order to utilize the Docker image, you'll need to have Docker installed on your device first.
-
-To get started with SurrealDB using Docker, execute the following command:
+To get started, you'll need to have Docker installed on your device first and then execute the following commands:
 
 ```bash
+docker compose pull
 docker compose up -d
 ```
 
@@ -17,7 +16,12 @@ This will start SurrealDB on port 8000. You can stop SurrealDB with:
 docker compose stop
 ```
 
-_For additional information and instructions regarding the installation process, please refer to the [SurrealDB documentation](https://surrealdb.com/docs/installation)._
+In case you prefer to install SurrealDB directly onto your system instead of using Docker, you have the option to do so. For additional information and instructions regarding the installation process, please refer to the [SurrealDB documentation](https://surrealdb.com/docs/installation). After the installation, you may need to set several parameters as environment variables, e.g.:
+
+```bash
+SURREALDB_SERVER=127.0.0.1 SURREALDB_PORT=8000 SURREALDB_USERNAME=root SURREALDB_PASSWORD=root SURREALDB_NS=leptos_examples SURREALDB_DB=todos cargo leptos watch
+```
+These variables indicate the server address, port, username, password, namespace, and database respectively. If you are using this example with Docker, you don't need to set these variables as they are already set in the `docker-compose.yml` file.
 
 ## Client Side Rendering
 This example cannot be built as a trunk standalone CSR-only app. Only the server may directly connect to the database.
