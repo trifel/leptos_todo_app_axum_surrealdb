@@ -25,6 +25,7 @@ These variables indicate the server address, port, username, password, namespace
 
 ## Client Side Rendering
 This example cannot be built as a trunk standalone CSR-only app. Only the server may directly connect to the database.
+You find an CSR example here: [Leptos Todo App SurrealDB (CSR)](https://github.com/trifel/leptos_todo_app_surrealdb).
 
 ## Server Side Rendering with cargo-leptos
 cargo-leptos is now the easiest and most featureful way to build server side rendered apps with hydration. It provides automatic recompilation of client and server code, wasm optimisation, CSS minification, and more! Check out more about it [here](https://github.com/akesson/cargo-leptos)
